@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Daftar Menu</title>
+	<script>
+		function hitung() {
+		  var input = document.getElementsByName("product");
+		  var total = 0;
+		  for (var i = 0; i < input.length; i++) {
+			if (input[i].checked) {
+			  total += parseFloat(input[i].value);
+			}
+		  }
+		  document.getElementById("total").value = "Rp" + total.toFixed(2);
+		}
+	</script>
+</head>
+<body>
+	<form action="" id="theForm">
+		<fieldset>
+			<legend>
+				Daftar Menu
+			</legend>
+			<label>
+				<input name="product" value="5000" type="checkbox" id="menu1" onclick="hitung()"/>
+				Ayam Goreng Rp. 5000
+			</label>
+			<label>
+				<input name="product" value="500" type="checkbox" id="menu2" onclick="hitung()"/>
+				Tempe Goreng Rp. 500
+			</label>
+			<label>
+				<input name="product" value="2500" type="checkbox" id="menu3" onclick="hitung()"/>
+				Telur Dadar Rp. 2500
+			</label>
+			<label>
+				Total 
+				<input value="Rp. " readonly="readonly" type="text" id="total"/>
+			</label>
+			<input value="Reset" type="reset"/>
+		</fieldset>
+	</form>
+</body>
+	<script language="javascript">
+	function validasi() {
+		var menu1 = document.getElementById("menu1").value;
+		var menu2 = document.getElementById("menu2").value;
+		var menu3 = document.getElementById("menu3").value;
+		if (menu1 != "" && menu2!="" && menu3 !="") {
+			return true;
+		}else{
+			alert('Anda belum memilih menu !');
+		}
+	}
+</script>
+</html>
